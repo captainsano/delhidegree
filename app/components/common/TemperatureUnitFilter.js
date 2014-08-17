@@ -18,7 +18,7 @@
                 case 'C':
                 case 'c': return Math.round(input - 273.15);
                 case 'F':
-                case 'f': return Math.round(input - 459.67);
+                case 'f': return Math.round(1.8 * (input - 273.15) + 32);
             }
             return 0;
         };
