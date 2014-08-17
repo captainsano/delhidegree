@@ -2,8 +2,27 @@
 <html>
 <head>
     <title>Delhi Degree</title>
-</head>
-<body ng-app="dd">
 
+    <!-- build:css css/main.min.css -->
+    <link href="bower_components/normalize.css/normalize.css" rel="stylesheet">
+    <link href="less/main.less" rel="stylesheet/less">
+    <!-- /build -->
+
+    <!-- build:js js/app.min.js -->
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="components/common/app.js"></script>
+    <!-- /build -->
+
+    <!-- build:remove -->
+    <script>
+        less = {logLevel: 0}
+    </script>
+    <script src="bower_components/less/dist/less-1.7.3.js"></script>
+    <!-- /build -->
+</head>
+<body>
+    <div id="app-wrapper" ng-app="dd">
+
+    </div>
 </body>
 </html>

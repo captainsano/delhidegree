@@ -14,5 +14,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.1",
+    "angularjs": "~1.2.22"
+  },
+  "devDependencies": {
+    "less": "~1.7.4"
+  }
 }
