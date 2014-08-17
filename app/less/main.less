@@ -5,4 +5,27 @@ html, body {
   background: @PAGE_BGCOLOR;
   font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
   font-weight: 300;
+  color: #fefefe;
+}
+
+//-------- Logo ---------
+#logo {
+  position: absolute;
+  top: 20px + 10px;  // Status bar + Offset
+  left: 15px;
+
+  h3 {
+    font-size: 0.85em;
+    font-weight: 300;
+    line-height: 1.05em;
+    margin: 0;
+    text-transform: uppercase;
+
+    span.deg,
+    &::first-letter {
+      font-size: 1.75em;
+    }
+
+    // TODO: Letter Shadow
+  }
 }
