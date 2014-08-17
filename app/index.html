@@ -33,10 +33,10 @@
             <h3>Delhi<span class="deg">&deg;</span></h3>
         </div>
 
-        <div id="temp-label" ng-controller="TemperatureDisplayController">
+        <div id="temp-label" ng-controller="TemperatureDisplayController" ng-click="toggleUnit()">
             <div class="label">Tomorrow 12:00 PM</div>
             <div class="temp">
-                <span class="value">{{list[24].main.temp | tempunit:'F'}}</span><span class="deg">&deg;C</span>
+                <span class="value">{{list[24].main.temp | tempunit:unit}}</span><span class="deg">&deg;{{unit}}</span>
             </div>
         </div>
     </div>
