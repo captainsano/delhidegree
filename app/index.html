@@ -17,6 +17,7 @@
     <script src="components/common/app.js"></script>
 
     <script src="components/common/TemperatureDisplayController.js"></script>
+    <script src="components/common/TemperatureUnitFilter.js"></script>
     <!-- /build -->
 
     <!-- build:remove -->
@@ -35,7 +36,7 @@
         <div id="temp-label" ng-controller="TemperatureDisplayController">
             <div class="label">Tomorrow 12:00 PM</div>
             <div class="temp">
-                <span class="value">39</span><span class="deg">&deg;C</span>
+                <span class="value">{{list[24].main.temp | tempunit:'C'}}</span><span class="deg">&deg;C</span>
             </div>
         </div>
     </div>
