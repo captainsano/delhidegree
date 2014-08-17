@@ -2,7 +2,9 @@
     'use strict';
 
     // Declare the main module
-    angular.module('dd', []);
+    angular.module('dd', [
+        'openweathermap'
+    ]);
 
 
 }(angular));

@@ -10,7 +10,13 @@
 
     <!-- build:js js/app.min.js -->
     <script src="bower_components/angularjs/angular.js"></script>
+
+    <script src="components/openweathermap/module.js"></script>
+    <script src="components/openweathermap/ForecastService.js"></script>
+
     <script src="components/common/app.js"></script>
+
+    <script src="components/common/TemperatureDisplayController.js"></script>
     <!-- /build -->
 
     <!-- build:remove -->
@@ -26,7 +32,7 @@
             <h3>Delhi<span class="deg">&deg;</span></h3>
         </div>
 
-        <div id="temp-label">
+        <div id="temp-label" ng-controller="TemperatureDisplayController">
             <div class="label">Tomorrow 12:00 PM</div>
             <div class="temp">
                 <span class="value">39</span><span class="deg">&deg;C</span>
