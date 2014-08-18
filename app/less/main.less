@@ -24,8 +24,9 @@ html, body {
   position: absolute;
   top: -1 * @BOTTOM_PANE_HEIGHT;
   left: 0; right: 0;
+  z-index: 2;
   bottom: @BOTTOM_PANE_HEIGHT;
-  box-shadow: 0px 3px 2px #232323;
+  box-shadow: 0px 3px 5px #232323;
 }
 
 //------- Background Image --------
@@ -134,11 +135,11 @@ html, body {
   position: absolute;
   left: 0; right: 0;
   bottom: 0;
+  z-index: 1;
   height: @BOTTOM_PANE_HEIGHT;
   background: #fefefe;
   -webkit-overflow-scrolling: touch;
 
-  box-shadow: inset 0px 0px 5px #232323;
   overflow-x: auto;
   overflow-y: hidden;
 
