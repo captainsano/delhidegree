@@ -9,7 +9,12 @@
         .factory('ForecastService', [
             '$q', '$http',
             function($q, $http) {
-                var _getThreeHoursForecast, _getHeatIndex, API_ADDR;
+                var _storage, _getThreeHoursForecast, _getHeatIndex, API_ADDR;
+
+                // Global Storage object to store obtained results
+                _storage = {
+                    threeHoursForecast: null
+                };
 
                 API_ADDR = 'http://api.openweathermap.org/data/2.5/forecast';
 
@@ -19,6 +24,7 @@
                  */
                 _getThreeHoursForecast = function() {
                     var deferred = $q.defer();
+                    _storage.threeHoursForecast = null;
 
                     $http.get(API_ADDR, {
                         params: {
@@ -30,7 +36,7 @@
                         if (data.cod != '200') {
                             deferred.reject(data);
                         }
-                        console.log(data);
+                        _storage.threeHoursForecast = data;
                         deferred.resolve(data);
                     }).error(function(data, status, headers, config) {
                         console.log('Error');
@@ -77,6 +83,7 @@
                 };
 
                 return {
+                    storage: _storage,
                     getThreeHoursForecast: _getThreeHoursForecast,
                     getHeatIndex: _getHeatIndex
                 };

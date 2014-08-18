@@ -19,6 +19,7 @@
 
     <script src="components/common/TemperatureDisplayController.js"></script>
     <script src="components/common/TemperatureUnitFilter.js"></script>
+    <script src="components/common/BottomPaneController.js"></script>
     <!-- /build -->
 
     <!-- build:remove -->
@@ -30,7 +31,7 @@
 </head>
 <body>
     <div id="app-wrapper" ng-app="dd">
-        <div id="main-pane">
+        <div id="main-pane" style="top: -200px; bottom: 200px;">
             <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
             <div id="bg-gradient"></div>
 
@@ -52,7 +53,16 @@
                 </div>
             </div>
         </div>
-
+        <div id="bottom-pane" ng-controller="BottomPaneController">
+            <div class="forecast-container" style="width: {{(storage.threeHoursForecast.list.length * 150) + 'px'}}">
+                <div class="tempbox" ng-repeat="forecast in storage.threeHoursForecast.list" style="left: {{($index * 150) + 'px'}}">
+                    <h4 class="time">{{forecast.dt}}</h4>
+                    <img ng-src="img/{{forecast.weather[0].icon}}.png"></img>
+                    <h2 class="temp">{{forecast.main.temp | tempunit:'C'}}<span class="unit">&deg;C</span></h2>
+                    <h3>{{forecast.weather[0].main}}</h3>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
