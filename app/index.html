@@ -30,16 +30,16 @@
 </head>
 <body>
     <div id="app-wrapper" ng-app="dd">
-        <div id="bg-image-container" style="background-image: url('img/Delhi_India_Gate.jpg')"></div>
+        <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
 
         <div id="logo">
             <h3>Delhi<span class="deg">&deg;</span></h3>
         </div>
 
-        <div id="temp-label" ng-controller="TemperatureDisplayController" ng-click="toggleUnit()">
+        <div id="temp-label" ng-controller="TemperatureDisplayController">
             <div class="label">Tomorrow 12:00 PM</div>
             <div class="temp">
-                <span class="value" ng-if="(list.length > 23)">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="(list.length === 0)">-</span><span class="deg">&deg;{{unit}}</span>
+                <span class="value" ng-if="(list.length > 23)">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="(list.length === 0)">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
             </div>
         </div>
     </div>
