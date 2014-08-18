@@ -27,17 +27,20 @@
     angular
         .module('dd')
         .controller('TemperatureDisplayController', [
-           '$scope', 'ForecastService',
-            function($scope, ForecastService) {
+           '$scope', '$filter', 'ForecastService',
+            function($scope, $filter, ForecastService) {
                 $scope.list = [];
                 $scope.nextDayForecast = null;
                 $scope.unit = 'C';
 
-                ForecastService.getThreeHoursForecast().then(function(data) {
-                    $scope.list = data.list;
-                    $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
-                }, function(error) {
-                    console.log(error);
+                $scope.$watch('nextDayForecast', function() {
+                    if ($scope.nextDayForecast) {
+                        console.log('Changed!');
+                        $scope.nextDayForecast.feelsLike = ForecastService.getHeatIndex(
+                            $filter('tempunit')($scope.nextDayForecast.main.temp, 'F'), $scope.nextDayForecast.main.humidity
+                        );
+                        console.log($scope.nextDayForecast);
+                    }
                 });
 
                 /**
@@ -46,6 +49,13 @@
                 $scope.toggleUnit = function() {
                     $scope.unit = ($scope.unit === 'C')?'F':'C';
                 };
+
+                ForecastService.getThreeHoursForecast().then(function(data) {
+                    $scope.list = data.list;
+                    $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
+                }, function(error) {
+                    console.log(error);
+                });
             }
         ]);
 
