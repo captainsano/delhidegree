@@ -27,11 +27,10 @@
     angular
         .module('dd')
         .controller('TemperatureDisplayController', [
-           '$scope', '$filter', 'ForecastService',
-            function($scope, $filter, ForecastService) {
+           '$rootScope', '$scope', '$filter', 'ForecastService',
+            function($rootScope, $scope, $filter, ForecastService) {
                 $scope.list = [];
                 $scope.nextDayForecast = null;
-                $scope.unit = 'C';
 
                 $scope.$watch('nextDayForecast', function() {
                     if ($scope.nextDayForecast) {
@@ -49,7 +48,7 @@
                  * Method to toggle between Celsius to Fahrenheit
                  */
                 $scope.toggleUnit = function() {
-                    $scope.unit = ($scope.unit === 'C')?'F':'C';
+                    $rootScope.unit = ($rootScope.unit === 'C')?'F':'C';
                 };
 
                 ForecastService.getThreeHoursForecast().then(function(data) {
