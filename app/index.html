@@ -57,7 +57,7 @@
             <div class="forecast-container" style="width: {{(storage.threeHoursForecast.list.length * 150) + 'px'}}">
                 <div class="tempbox" ng-repeat="forecast in storage.threeHoursForecast.list" style="left: {{($index * 150) + 'px'}}">
                     <h4 class="time">{{forecast.dt}}</h4>
-                    <img ng-src="img/{{forecast.weather[0].icon}}.png"></img>
+                    <img ng-src="./img/wicons/{{forecast.weather[0].icon}}.png"></img>
                     <h2 class="temp">{{forecast.main.temp | tempunit:'C'}}<span class="unit">&deg;C</span></h2>
                     <h3>{{forecast.weather[0].main}}</h3>
                 </div>
