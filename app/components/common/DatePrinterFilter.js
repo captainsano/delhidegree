@@ -1,4 +1,4 @@
-(function(angula, moment) {
+(function(angular, moment) {
 
     'use strict';
 
