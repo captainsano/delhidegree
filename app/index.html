@@ -11,13 +11,18 @@
 
     <!-- build:js js/app.min.js -->
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/angularjs/angular.js"></script>
 
     <script src="components/openweathermap/module.js"></script>
     <script src="components/openweathermap/ForecastService.js"></script>
 
+    <script src="components/hammer/module.js"></script>
+    <script src="components/hammer/touchEvents.js"></script>
+
     <script src="components/common/app.js"></script>
 
+    <script src="components/common/RootController.js"></script>
     <script src="components/common/TemperatureDisplayController.js"></script>
     <script src="components/common/TemperatureUnitFilter.js"></script>
     <script src="components/common/BottomPaneController.js"></script>
@@ -32,8 +37,8 @@
     <!-- /build -->
 </head>
 <body>
-    <div id="app-wrapper" ng-app="dd">
-        <div id="main-pane">
+    <div id="app-wrapper" ng-app="dd" ng-controller="RootController">
+        <div id="main-pane" ng-class="{'raised': bottomPaneVisible}" hm-pan-up="showBottomPane()" hm-pan-down="hideBottomPane()">
             <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
             <div id="bg-gradient"></div>
 

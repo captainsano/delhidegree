@@ -4,7 +4,8 @@
 
     // Declare the main module
     angular.module('dd', [
-        'openweathermap'
+        'openweathermap',
+        'hammer'
     ]);
 
     // Run block to set global unit for temperature - C/F
