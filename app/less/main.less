@@ -1,7 +1,17 @@
+//----- Mixins -----
+.disable-user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 //----- Page Style ------
 @PAGE_BGCOLOR: #232323;
 
 html, body {
+  .disable-user-select;
   background: @PAGE_BGCOLOR;
   font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
   font-weight: 300;
