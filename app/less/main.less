@@ -9,6 +9,7 @@
 
 //----- Page Style ------
 @PAGE_BGCOLOR: #232323;
+@BOTTOM_PANE_HEIGHT: 175px;
 
 html, body {
   .disable-user-select;
@@ -21,7 +22,9 @@ html, body {
 //------ main-pane -------
 #main-pane {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: -1 * @BOTTOM_PANE_HEIGHT;
+  left: 0; right: 0;
+  bottom: @BOTTOM_PANE_HEIGHT;
   box-shadow: 0px 3px 2px #232323;
 }
 
@@ -131,7 +134,7 @@ html, body {
   position: absolute;
   left: 0; right: 0;
   bottom: 0;
-  height: 200px;
+  height: @BOTTOM_PANE_HEIGHT;
   background: #f0f0f0;
   -webkit-overflow-scrolling: touch;
 
@@ -151,12 +154,22 @@ html, body {
       h2, h3, h4 {
         margin: 0;
         padding: 0;
-        font-weight: 200;
+        font-weight: 300;
       }
 
       h4.time {
         margin-top: 15px;
         margin-bottom: 10px;
+      }
+
+      h2.temp {
+        margin-bottom: 5px;
+
+        span.unit {
+          font-size: 0.65em;
+          font-weight: 400;
+          vertical-align: top;
+        }
       }
     }
   }

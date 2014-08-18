@@ -1,5 +1,7 @@
 (function(angular) {
 
+    'use strict';
+
     angular
         .module('dd')
         .controller('BottomPaneController', [
@@ -7,6 +9,6 @@
             function($scope, ForecastService) {
                 $scope.storage = ForecastService.storage;
             }
-        ])
+        ]);
 
 }(angular));
