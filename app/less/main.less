@@ -36,6 +36,17 @@ html, body {
   bottom: 0;
   box-shadow: 0px 3px 5px #232323;
 
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.25s;
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.25s;
+  -o-transition-property: all;
+  -o-transition-duration: 0.25s;
+  transition-property: all;
+  transition-duration: 0.25s;
+
   &.raised {
     top: -1 * @BOTTOM_PANE_HEIGHT;
     bottom: @BOTTOM_PANE_HEIGHT;
