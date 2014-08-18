@@ -30,26 +30,29 @@
 </head>
 <body>
     <div id="app-wrapper" ng-app="dd">
-        <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
-        <div id="bg-gradient"></div>
+        <div id="main-pane">
+            <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
+            <div id="bg-gradient"></div>
 
-        <div id="logo">
-            <h3>Delhi<span class="deg">&deg;</span></h3>
-        </div>
-
-        <div ng-controller="TemperatureDisplayController">
-            <div id="feels-like-label" ng-if="nextDayForecast">
-                <h3 class="temp">Like {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span></h3>
-                <h3 class="weather">{{nextDayForecast.weather[0].main}}</h3>
+            <div id="logo">
+                <h3>Delhi<span class="deg">&deg;</span></h3>
             </div>
 
-            <div id="temp-label">
-                <div class="label">Tomorrow 12:00 PM</div>
-                <div class="temp">
-                    <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
+            <div ng-controller="TemperatureDisplayController">
+                <div id="feels-like-label" ng-if="nextDayForecast">
+                    <h3 class="temp">Like {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span></h3>
+                    <h3 class="weather">{{nextDayForecast.weather[0].main}}</h3>
+                </div>
+
+                <div id="temp-label">
+                    <div class="label">Tomorrow 12:00 PM</div>
+                    <div class="temp">
+                        <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 </html>
