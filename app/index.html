@@ -38,7 +38,8 @@
 
         <div ng-controller="TemperatureDisplayController">
             <div id="feels-like-label" ng-if="nextDayForecast">
-                Feels Like: {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span>
+                <h3 class="temp">Like {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span></h3>
+                <h3 class="weather">{{nextDayForecast.weather[0].main}}</h3>
             </div>
 
             <div id="temp-label">
