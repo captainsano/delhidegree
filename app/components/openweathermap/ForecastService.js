@@ -30,6 +30,7 @@
                         if (data.cod != '200') {
                             deferred.reject(data);
                         }
+                        console.log(data);
                         deferred.resolve(data);
                     }).error(function(data, status, headers, config) {
                         console.log('Error');
@@ -41,7 +42,7 @@
                 };
 
                 return {
-                    getNextAfternoonForecast: _getThreeHoursForecast,
+                    getThreeHoursForecast: _getThreeHoursForecast,
                 };
             }
         ]);
