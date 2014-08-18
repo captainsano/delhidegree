@@ -1,4 +1,4 @@
-(function(angular) {
+(function(angular, moment) {
 
     'use strict';
 
@@ -8,7 +8,15 @@
             '$scope', 'ForecastService',
             function($scope, ForecastService) {
                 $scope.storage = ForecastService.storage;
+
+                $scope.isDivider = function(input) {
+                    if (moment(input).hour() === 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                };
             }
         ]);
 
-}(angular));
+}(angular, moment));
