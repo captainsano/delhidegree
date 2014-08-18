@@ -36,10 +36,16 @@
             <h3>Delhi<span class="deg">&deg;</span></h3>
         </div>
 
-        <div id="temp-label" ng-controller="TemperatureDisplayController">
-            <div class="label">Tomorrow 12:00 PM</div>
-            <div class="temp">
-                <span class="value" ng-if="(list.length > 23)">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="(list.length === 0)">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
+        <div ng-controller="TemperatureDisplayController">
+            <div id="feels-like-label" ng-if="nextDayForecast">
+                Feels Like: {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span>
+            </div>
+
+            <div id="temp-label">
+                <div class="label">Tomorrow 12:00 PM</div>
+                <div class="temp">
+                    <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
+                </div>
             </div>
         </div>
     </div>
