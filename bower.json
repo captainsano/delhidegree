@@ -23,6 +23,7 @@
     "angular-animate": "~1.2.22"
   },
   "devDependencies": {
-    "less": "~1.7.4"
+    "less": "~1.7.4",
+    "angular-mocks": "~1.2.22"
   }
 }
