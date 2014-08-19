@@ -46,6 +46,10 @@
                 <h3>Delhi<span class="deg">&deg;</span></h3>
             </div>
 
+            <div id="unit-toggler" hm-tap="toggleUnit()">
+                <span ng-class="{'active': (unit == 'C')}">&deg;C</span>/<span ng-class="{'active': (unit == 'F')}">&deg;F</span>
+            </div>
+
             <div ng-controller="TemperatureDisplayController">
                 <div id="feels-like-label" ng-if="nextDayForecast">
                     <h3 class="temp">Like {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span></h3>

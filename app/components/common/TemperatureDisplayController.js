@@ -44,13 +44,6 @@
                     }
                 });
 
-                /**
-                 * Method to toggle between Celsius to Fahrenheit
-                 */
-                $scope.toggleUnit = function() {
-                    $rootScope.unit = ($rootScope.unit === 'C')?'F':'C';
-                };
-
                 ForecastService.getThreeHoursForecast().then(function(data) {
                     $scope.list = data.list;
                     $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
