@@ -31,6 +31,7 @@
             function($rootScope, $scope, $filter, ForecastService) {
                 $scope.list = [];
                 $scope.nextDayForecast = null;
+                $scope.disconnected = false;
 
                 $scope.$watch('nextDayForecast', function() {
                     if ($scope.nextDayForecast) {
@@ -45,11 +46,13 @@
 
                 $scope.load = function() {
                     ForecastService.getThreeHoursForecast().then(function(data) {
+                        $scope.disconnected = false;
                         $scope.list = data.list;
                         $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
                     }, function(error) {
                         if (error === 'disconnect') {
                             console.log('Disconnected!');
+                            $scope.disconnected = true;
                         }
                     });
                 };

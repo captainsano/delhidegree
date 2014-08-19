@@ -66,6 +66,11 @@
                         <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg">&deg;{{unit}}</span>
                     </div>
                 </div>
+
+                <div id="disconnected-message" ng-if="disconnected" hm-tap="load()">
+                    <span>Internet Disconnected</span><br/>
+                    <span>Tap To Retry</span>
+                </div>
             </div>
         </div>
         <div id="right-pane" ng-controller="RightPaneController" ng-show="rightPaneVisible">
