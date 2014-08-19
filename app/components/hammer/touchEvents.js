@@ -10,6 +10,7 @@
                 return {
                     link: function($scope, $element, attrs) {
                         var hammer, fn;
+                        console.log('Hammer PanUp Linking...');
 
                         fn = $parse(attrs['hmPanUp']);
                         hammer = new Hammer($element[0]);
@@ -33,6 +34,7 @@
                 return {
                     link: function($scope, $element, attrs) {
                         var hammer, fn;
+                        console.log('Hammer PanDown Linking...');
 
                         fn = $parse(attrs['hmPanDown']);
                         hammer = new Hammer($element[0]);
