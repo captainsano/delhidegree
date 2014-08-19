@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>DelhiDegree</name>
+    <description>
+        App displays the weather forecast of Delhi.
+    </description>
+    <author email="rssanthosbaala@gmail.com" href="http://facebook.com/santhosbaala">
+        Santhos Baala RS
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+
+    <!-- Android -->
+    <preference name="disallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />
+
+    <!-- iOS -->
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />
+</widget>
