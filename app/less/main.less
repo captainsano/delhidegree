@@ -25,13 +25,12 @@
 
 //----- Page Style ------
 @PAGE_BGCOLOR: #232323;
-@RIGHT_PANE_WIDTH: 200px;
+@RIGHT_PANE_WIDTH: 150px;
 
 html, body {
   .disable-user-select;
   background: @PAGE_BGCOLOR;
   font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
-  font-weight: 300;
   color: #fefefe;
 }
 
@@ -60,8 +59,8 @@ html, body {
   transition-duration: @TRANSITION_DURATION;
 
   &.raised {
-    -webkit-transform: translate3d(-1 * @RIGHT_PANE_WIDTH + 10px, 0px, 0px);
-    transform: translate3d(-1 * @RIGHT_PANE_WIDTH + 10px, 0px, 0px);
+    -webkit-transform: translate3d(-1 * @RIGHT_PANE_WIDTH, 0px, 0px);
+    transform: translate3d(-1 * @RIGHT_PANE_WIDTH, 0px, 0px);
   }
 }
 
@@ -97,15 +96,14 @@ html, body {
 
   h3 {
     font-size: 0.85em;
-    font-weight: 300;
     line-height: 1.05em;
+    font-weight: 400;
     margin: 0;
     text-transform: uppercase;
 
     span.deg,
     &::first-letter {
       font-size: 1.75em;
-      font-weight: 100;
     }
 
     text-shadow: 0px 0px 15px #232323;
@@ -187,8 +185,8 @@ html, body {
       width: @RIGHT_PANE_WIDTH;
       text-align: center;
       color: #232323;
-      border-top: 1px solid darken(#f9f9f9, 5%);
-      border-bottom: 1px solid darken(#f9f9f9, 15%);
+      border-bottom: 1px solid darken(#f9f9f9, 5%);
+      border-top: 1px solid darken(#f9f9f9, 15%);
 
       overflow: auto;
 
