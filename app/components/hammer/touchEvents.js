@@ -13,9 +13,11 @@
                         console.log('Hammer PanUp Linking...');
 
                         fn = $parse(attrs['hmPanUp']);
-                        hammer = new Hammer($element[0]);
+                        hammer = new Hammer($element[0], {
+                            threshold: 10
+                        });
 
-                        hammer.on('panup', function(event) {
+                        hammer.on('swipeleft', function(event) {
                             $scope.$apply(function() {
                                 event.preventDefault();
                                 fn($scope, {$event:event});
@@ -37,9 +39,11 @@
                         console.log('Hammer PanDown Linking...');
 
                         fn = $parse(attrs['hmPanDown']);
-                        hammer = new Hammer($element[0]);
+                        hammer = new Hammer($element[0], {
+                            threshold: 10
+                        });
 
-                        hammer.on('pandown', function(event) {
+                        hammer.on('swiperight', function(event) {
                             $scope.$apply(function() {
                                 event.preventDefault();
                                 fn($scope, {$event:event});

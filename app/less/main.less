@@ -44,23 +44,24 @@ html, body {
   bottom: 0;
   box-shadow: 0px 3px 5px #232323;
 
+  @TRANSITION_DURATION: 0.25s;
   .force-hardware-acceleration;
   -webkit-transform: translate3d(0px,0px,0px);
   -webkit-transition-property: transform;
-  -webkit-transition-duration: 750ms;
+  -webkit-transition-duration: @TRANSITION_DURATION;
   -moz-transition-property: transform;
-  -moz-transition-duration: 750ms;
+  -moz-transition-duration: @TRANSITION_DURATION;
   -ms-transition-property: transform;
-  -ms-transition-duration: 750ms;
+  -ms-transition-duration: @TRANSITION_DURATION;
   -o-transition-property: transform;
-  -o-transition-duration: 750ms;
+  -o-transition-duration: @TRANSITION_DURATION;
   transform: translate3d(0px,0px,0px);
   transition-property: transform;
-  transition-duration: 750ms;
+  transition-duration: @TRANSITION_DURATION;
 
   &.raised {
-    -webkit-transform: translate3d(0px, -1 * @BOTTOM_PANE_HEIGHT, 0px);
-    transform: translate3d(0px, -1 * @BOTTOM_PANE_HEIGHT, 0px);
+    -webkit-transform: translate3d(-1 * @BOTTOM_PANE_HEIGHT, 0px, 0px);
+    transform: translate3d(-1 * @BOTTOM_PANE_HEIGHT, 0px, 0px);
   }
 }
 
