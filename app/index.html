@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div id="right-pane" ng-controller="RightPaneController">
+        <div id="right-pane" ng-controller="RightPaneController" ng-show="rightPaneVisible">
             <div class="forecast-container" style="height: {{(storage.threeHoursForecast.list.length * 150) + 'px'}}">
                 <div class="tempbox" ng-class="{'divider': (isDivider(forecast.dt_txt) || $first)}" ng-repeat="forecast in storage.threeHoursForecast.list">
                     <h4 class="time">{{forecast.dt_txt | dateprinter:$index}}</h4>
@@ -78,7 +78,7 @@
             </div>
         </div>
         <!-- Layer which handles the tap event on main pane when right pane is visible -->
-        <div id="right-pane-closer" ng-if="rightPaneVisible" hm-tap="hideRightPane()" hm-swipe-right="hideRightPane()"></div>
+        <div id="right-pane-closer" ng-show="rightPaneVisible" hm-tap="hideRightPane()" hm-swipe-right="hideRightPane()"></div>
     </div>
 </body>
 </html>
