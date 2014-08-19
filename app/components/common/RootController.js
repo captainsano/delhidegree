@@ -16,6 +16,10 @@
                 $scope.hideRightPane = function() {
                     $scope.rightPaneVisible = false;
                 };
+
+                $scope.toggleRightPane = function() {
+                    $scope.rightPaneVisible = !$scope.rightPaneVisible;
+                };
             }
         ]);
 

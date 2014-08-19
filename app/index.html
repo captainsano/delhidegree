@@ -52,10 +52,10 @@
                     <h3 class="weather">{{nextDayForecast.weather[0].main}}</h3>
                 </div>
 
-                <div id="temp-label">
+                <div id="temp-label" hm-tap="toggleRightPane()">
                     <div class="label">Tomorrow 12:00 PM</div>
                     <div class="temp">
-                        <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" hm-tap="toggleUnit()">&deg;{{unit}}</span>
+                        <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg">&deg;{{unit}}</span>
                     </div>
                 </div>
             </div>
