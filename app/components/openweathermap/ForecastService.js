@@ -39,9 +39,11 @@
                         _storage.threeHoursForecast = data;
                         deferred.resolve(data);
                     }).error(function(data, status, headers, config) {
-                        console.log('Error');
-                        console.log(data);
-                        deferred.reject(data);
+                        if (!data) {
+                            deferred.reject('disconnect');
+                        } else {
+                            deferred.reject(data);
+                        }
                     });
 
                     return deferred.promise;

@@ -43,12 +43,18 @@
                     }
                 });
 
-                ForecastService.getThreeHoursForecast().then(function(data) {
-                    $scope.list = data.list;
-                    $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
-                }, function(error) {
-                    console.log(error);
-                });
+                $scope.load = function() {
+                    ForecastService.getThreeHoursForecast().then(function(data) {
+                        $scope.list = data.list;
+                        $scope.nextDayForecast = _getNextDayNoonForecast(data.list);
+                    }, function(error) {
+                        if (error === 'disconnect') {
+                            console.log('Disconnected!');
+                        }
+                    });
+                };
+
+                $scope.load();
             }
         ]);
 
