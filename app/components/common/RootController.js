@@ -7,14 +7,14 @@
         .controller('RootController', [
             '$scope',
             function($scope) {
-                $scope.bottomPaneVisible = false;
+                $scope.rightPaneVisible = false;
 
-                $scope.showBottomPane = function() {
-                    $scope.bottomPaneVisible = true;
+                $scope.showRightPane = function() {
+                    $scope.rightPaneVisible = true;
                 };
 
-                $scope.hideBottomPane = function() {
-                    $scope.bottomPaneVisible = false;
+                $scope.hideRightPane = function() {
+                    $scope.rightPaneVisible = false;
                 };
             }
         ]);

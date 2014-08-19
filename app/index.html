@@ -25,7 +25,7 @@
     <script src="components/common/RootController.js"></script>
     <script src="components/common/TemperatureDisplayController.js"></script>
     <script src="components/common/TemperatureUnitFilter.js"></script>
-    <script src="components/common/BottomPaneController.js"></script>
+    <script src="components/common/RightPaneController.js"></script>
     <script src="components/common/DatePrinterFilter.js"></script>
     <!-- /build -->
 
@@ -38,7 +38,7 @@
 </head>
 <body>
     <div id="app-wrapper" ng-app="dd" ng-controller="RootController">
-        <div id="main-pane" ng-class="{'raised': bottomPaneVisible}" hm-pan-up="showBottomPane()" hm-pan-down="hideBottomPane()">
+        <div id="main-pane" ng-class="{'raised': rightPaneVisible}" hm-swipe-left="showRightPane()" hm-swipe-right="hideRightPane()">
             <div id="bg-image-container" style="background-image: url('./img/Delhi_India_Gate.jpg')"></div>
             <div id="bg-gradient"></div>
 
@@ -60,13 +60,13 @@
                 </div>
             </div>
         </div>
-        <div id="bottom-pane" ng-controller="BottomPaneController">
-            <div class="forecast-container" style="width: {{(storage.threeHoursForecast.list.length * 150) + 'px'}}">
+        <div id="right-pane" ng-controller="RightPaneController">
+            <div class="forecast-container" style="height: {{(storage.threeHoursForecast.list.length * 150) + 'px'}}">
                 <div class="tempbox" ng-class="{'divider': (isDivider(forecast.dt_txt) || $first)}" ng-repeat="forecast in storage.threeHoursForecast.list">
                     <h4 class="time">{{forecast.dt_txt | dateprinter:$index}}</h4>
                     <img ng-src="./img/wicons/{{forecast.weather[0].icon}}.png"></img>
                     <h2 class="temp">{{forecast.main.temp | tempunit:unit}}<span class="unit">&deg;{{unit}}</span></h2>
-                    <h3>{{forecast.weather[0].main}}</h3>
+                    <h3 class="description">{{forecast.weather[0].main}}</h3>
                 </div>
             </div>
         </div>

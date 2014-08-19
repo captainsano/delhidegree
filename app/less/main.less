@@ -25,7 +25,7 @@
 
 //----- Page Style ------
 @PAGE_BGCOLOR: #232323;
-@BOTTOM_PANE_HEIGHT: 175px;
+@RIGHT_PANE_WIDTH: 200px;
 
 html, body {
   .disable-user-select;
@@ -60,8 +60,8 @@ html, body {
   transition-duration: @TRANSITION_DURATION;
 
   &.raised {
-    -webkit-transform: translate3d(-1 * @BOTTOM_PANE_HEIGHT, 0px, 0px);
-    transform: translate3d(-1 * @BOTTOM_PANE_HEIGHT, 0px, 0px);
+    -webkit-transform: translate3d(-1 * @RIGHT_PANE_WIDTH + 10px, 0px, 0px);
+    transform: translate3d(-1 * @RIGHT_PANE_WIDTH + 10px, 0px, 0px);
   }
 }
 
@@ -166,29 +166,31 @@ html, body {
   }
 }
 
-//-------- Bottom Pane -----------
-#bottom-pane {
+//-------- Right Pane -----------
+#right-pane {
   position: absolute;
-  left: 0; right: 0;
+  top: 0;
+  right: 0;
   bottom: 0;
   z-index: 1;
-  height: @BOTTOM_PANE_HEIGHT;
+  width: @RIGHT_PANE_WIDTH;
   background: #f9f9f9;
   -webkit-overflow-scrolling: touch;
 
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .forecast-container {
+
     .tempbox {
       .border-box;
-      float: left;
-      width: 150px;
-      height: @BOTTOM_PANE_HEIGHT;
+      width: @RIGHT_PANE_WIDTH;
       text-align: center;
       color: #232323;
-      border-right: 1px solid darken(#f9f9f9, 5%);
-      border-left: 1px solid darken(#f9f9f9, 15%);
+      border-top: 1px solid darken(#f9f9f9, 5%);
+      border-bottom: 1px solid darken(#f9f9f9, 15%);
+
+      overflow: auto;
 
       &.divider {
         background: darken(#f9f9f9, 5%);
@@ -215,6 +217,10 @@ html, body {
           font-weight: 400;
           vertical-align: top;
         }
+      }
+
+      h3.description {
+        margin-bottom: 12px;
       }
     }
   }

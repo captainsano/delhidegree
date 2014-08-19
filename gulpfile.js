@@ -46,7 +46,7 @@ gulp.task('processjs', function () {
             'app/components/hammer/touchEvents.js',
             // Common Stuff
             'app/components/common/app.js',
-            'app/components/common/BottomPaneController.js',
+            'app/components/common/RightPaneController.js',
             'app/components/common/DatePrinterFilter.js',
             'app/components/common/RootController.js',
             'app/components/common/TemperatureDisplayController.js',

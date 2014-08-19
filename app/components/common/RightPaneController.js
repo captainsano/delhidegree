@@ -4,7 +4,7 @@
 
     angular
         .module('dd')
-        .controller('BottomPaneController', [
+        .controller('RightPaneController', [
             '$scope', 'ForecastService',
             function($scope, ForecastService) {
                 $scope.storage = ForecastService.storage;

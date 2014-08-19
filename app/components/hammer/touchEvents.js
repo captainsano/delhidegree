@@ -4,7 +4,7 @@
 
     angular
         .module('hammer')
-        .directive('hmPanUp', [
+        .directive('hmSwipeLeft', [
             '$parse',
             function($parse) {
                 return {
@@ -12,7 +12,7 @@
                         var hammer, fn;
                         console.log('Hammer PanUp Linking...');
 
-                        fn = $parse(attrs['hmPanUp']);
+                        fn = $parse(attrs['hmSwipeLeft']);
                         hammer = new Hammer($element[0], {
                             threshold: 10
                         });
@@ -30,7 +30,7 @@
 
     angular
         .module('hammer')
-        .directive('hmPanDown', [
+        .directive('hmSwipeRight', [
             '$parse',
             function($parse) {
                 return {
@@ -38,7 +38,7 @@
                         var hammer, fn;
                         console.log('Hammer PanDown Linking...');
 
-                        fn = $parse(attrs['hmPanDown']);
+                        fn = $parse(attrs['hmSwipeRight']);
                         hammer = new Hammer($element[0], {
                             threshold: 10
                         });
