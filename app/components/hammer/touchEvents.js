@@ -54,4 +54,30 @@
             }
         ]);
 
+    angular
+        .module('hammer')
+        .directive('hmTap', [
+            '$parse',
+            function($parse) {
+                return {
+                    link: function($scope, $element, attrs) {
+                        var hammer, fn;
+                        console.log('Hammer Tap Linking...');
+
+                        fn = $parse(attrs['hmTap']);
+                        hammer = new Hammer($element[0], {
+                            threshold: 10
+                        });
+
+                        hammer.on('tap', function(event) {
+                            $scope.$apply(function() {
+                                event.preventDefault();
+                                fn($scope, {$event:event});
+                            });
+                        });
+                    }
+                };
+            }
+        ]);
+
 }(angular, Hammer));

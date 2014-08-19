@@ -55,7 +55,7 @@
                 <div id="temp-label">
                     <div class="label">Tomorrow 12:00 PM</div>
                     <div class="temp">
-                        <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" ng-click="toggleUnit()">&deg;{{unit}}</span>
+                        <span class="value" ng-if="nextDayForecast">{{nextDayForecast.main.temp | tempunit:unit}}</span><span class="value" ng-if="!nextDayForecast">-</span><span class="deg" hm-tap="toggleUnit()">&deg;{{unit}}</span>
                     </div>
                 </div>
             </div>
