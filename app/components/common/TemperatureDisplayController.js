@@ -40,7 +40,6 @@
 
                         // Convert and set value in kelvin
                         $scope.nextDayForecast.feelsLike = Math.round(((feelsLikeF - 32) / 1.8) + 273.15);
-                        console.log($scope.nextDayForecast);
                     }
                 });
 
