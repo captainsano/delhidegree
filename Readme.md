@@ -2,6 +2,8 @@
 
 Weather app for frontend developer test.
 
+Download entire app with dependencies and images from [here](https://dl.dropboxusercontent.com/u/78957529/dd.zip).
+
 # Features
 
 - Shows the temperature forecast on next day noon at Delhi.
