@@ -28,4 +28,12 @@ describe('Temperature Unit Filter Test', function() {
         expect(TempUnitFilter(100, 'F')).toBe(-280);
     });
 
+    it('Should not return for invalid unit', function() {
+        expect(TempUnitFilter(0, 'X')).toBe(0);
+    });
+
+    it('Should not return for invalid unit', function() {
+        expect(TempUnitFilter(100, 'X')).toBe(0);
+    });
+
 });
