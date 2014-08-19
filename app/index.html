@@ -54,6 +54,9 @@
                 <div id="feels-like-label" ng-if="nextDayForecast">
                     <h3 class="temp">Like {{nextDayForecast.feelsLike | tempunit:unit}}<span class="deg">&deg;{{unit}}</span></h3>
                     <h3 class="weather">{{nextDayForecast.weather[0].main}}</h3>
+
+                    <img src="./img/clouds.png" width="25" />&nbsp;<span class="clouds">{{nextDayForecast.clouds.all}}%</span>
+                    <img src="./img/humidity.png" width="25" />&nbsp;<span class="humidity">{{nextDayForecast.main.humidity}}%</span>
                 </div>
 
                 <div id="temp-label" hm-tap="toggleRightPane()">
