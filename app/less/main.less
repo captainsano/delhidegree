@@ -32,6 +32,7 @@ html, body {
   background: @PAGE_BGCOLOR;
   font-family: "Helvetica Neue", "Helvetica", "Arial", Sans-Serif;
   color: #fefefe;
+  overflow-x: hidden;
 }
 
 //------ main-pane -------
@@ -208,6 +209,7 @@ html, body {
   width: @RIGHT_PANE_WIDTH;
   background: #f9f9f9;
   -webkit-overflow-scrolling: touch;
+  opacity: 1;
 
   overflow-x: hidden;
   overflow-y: scroll;
@@ -256,6 +258,25 @@ html, body {
       }
     }
   }
+}
+
+// Right Pane ngShow animation
+#right-pane {
+  -webkit-transition-property: opacity, transform;
+  -webkit-transition-duration: 250ms;
+  transition-property: opacity, transform;
+  ransition-duration: 250ms;
+
+  .force-hardware-acceleration;
+  -webkit-transform: translate3d(0px,0px,0px);
+  transform: translate3d(0px,0px,0px);
+}
+
+#right-pane.ng-hide {
+  opacity: 0;
+  right: 0;
+  -webkit-transform: translate3d(20px,0px,0px);
+  transform: translate3d(20px,0px,0px);
 }
 
 #right-pane-closer {

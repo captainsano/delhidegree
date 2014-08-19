@@ -38,6 +38,7 @@ gulp.task('processjs', function () {
             'app/bower_components/hammerjs/hammer.min.js',
             'app/bower_components/moment/min/moment.min.js',
             'app/bower_components/angularjs/angular.min.js',
+            'app/bower_components/angular-animate/angular-animate.min.js',
             // Open Weather Map
             'app/components/openweathermap/module.js',
             'app/components/openweathermap/ForecastService.js',

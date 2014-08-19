@@ -4,6 +4,7 @@
 
     // Declare the main module
     angular.module('dd', [
+        'ngAnimate',
         'openweathermap',
         'hammer'
     ]);
